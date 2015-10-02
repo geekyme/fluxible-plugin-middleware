@@ -2,6 +2,12 @@
 
 A plugin for [Fluxible](https://github.com/yahoo/fluxible) applications to provide an interface that attaches middlewares between an action dispatch and a store handler. Highly inspired by [Redux middlewares](https://rackt.github.io/redux/docs/advanced/Middleware.html).
 
+## Install
+
+```
+npm install fluxible-plugin-middleware
+```
+
 ## Usage
 
 ```js
