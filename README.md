@@ -5,7 +5,7 @@ A plugin for [Fluxible](https://github.com/yahoo/fluxible) applications to provi
 ## Usage
 
 ```js
-import middlewarePlugin from "./plugins/middleware-plugin";
+import middlewarePlugin from "fluxible-plugin-middleware";
 import Fluxible from "fluxible";
 
 const app = new Fluxible();
@@ -24,3 +24,8 @@ app.plug(middlewarePlugin(logMiddleware));
 
 Now, when calling the `context.dispatch` method within action creators, all action objects will pass through the middlewares before getting dispatched into the stores for handling
 
+For additional middlewares:
+
+```js
+app.plug(middlewarePlugin(logMiddleware, secondMiddleware, thirdMiddleware));
+```
