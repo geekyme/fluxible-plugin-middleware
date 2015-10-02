@@ -1,6 +1,6 @@
 {
   "name": "fluxible-plugin-middleware",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A plugin for Fluxible applications to provide an interface that attaches middlewares between an action dispatch and a store handler",
   "main": "index.js",
   "scripts": {
