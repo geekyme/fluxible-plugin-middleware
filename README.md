@@ -16,9 +16,10 @@ import Fluxible from "fluxible";
 
 const app = new Fluxible();
 
-const logMiddleware = function(){
+const logMiddleware = function(actionContext){
     return function(next) {
       return function(type, payload){
+        console.log(actionContext);
         console.info(type, payload);
         next(type, payload);
       };
@@ -28,7 +29,9 @@ const logMiddleware = function(){
 app.plug(middlewarePlugin(logMiddleware));
 ```
 
-Now, when calling the `context.dispatch` method within action creators, all action objects will pass through the middlewares before getting dispatched into the stores for handling
+Now, when calling the `context.dispatch` method within action creators, all action objects will pass through the middlewares before getting dispatched into the stores for handling.
+
+Your middlewares will also have access to the entire [`actionContext`](http://fluxible.io/api/actions.html#action-context) so you can fire the context functions within your middlewares if you like.
 
 For additional middlewares:
 
